@@ -1,0 +1,38 @@
+﻿@model EcommerceCoreAngular.Models.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row m-t-30">
+    <div class="col-md-12">
+
+        <div class="panel panel-info">
+            <div class="panel-heading"> Create Category</div>
+            <div class="panel-wrapper" aria-expanded="true">
+                <div class="panel-body">
+                    <form asp-area="Admin" asp-controller="Category" asp-action="Create" method="post">
+                        <div class="form-body">
+                            <h3 class="box-title">Create Category</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Category Name</label>
+                                        <input asp-for="CategoryName" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="form-actions m-t-30">
+                            <button type="submit" value="Create" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                        </div>
+                    </form>
+                    <div asp-validation-summary="All"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

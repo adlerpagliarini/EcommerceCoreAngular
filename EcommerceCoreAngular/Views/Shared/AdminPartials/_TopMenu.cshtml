@@ -1,0 +1,20 @@
+﻿<div class="navbar-header" style="float:none;">
+    <div class="m-l-10" style="width: 220px;float: left; background: #4F5477;">
+        <a class="logo" href="/">
+            <b>
+                <img src="~/images/happy.jpg" class="img-circle" alt="home" width="60">
+            </b>
+            <span style="color:white"><strong>Happy</strong> Code</span>
+        </a>
+    </div>
+    <ul class="nav navbar-top-links navbar-left hidden-xs"></ul>
+
+    @await Html.PartialAsync("AdminPartials/_TopPartialLoginMenu")
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/Account/Register">## Register ##</a></li>
+        <li><a href="/Account/Login">## Log in ##</a></li>
+    </ul>
+
+
+</div>

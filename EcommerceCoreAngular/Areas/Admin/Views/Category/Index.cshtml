@@ -1,0 +1,57 @@
+﻿@model IEnumerable<EcommerceCoreAngular.Models.Category>
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <h3 class="box-title">Blank Starter page</h3>
+            <a asp-area="Admin" asp-controller="Category" asp-action="Create" class="btn btn-success">
+                <span class="btn btn-label"><i class="fa fa-check"></i></span>Add New Category
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="white-box">
+                        <h3 class="box-title">New Category</h3>
+                        <div class="table-responsive">
+                            <table class="table product-overview">
+                                <thead>
+                                    <tr>
+                                        <th>Category Name</th>
+                                        <th>Total Products</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var cat in Model)
+                                    {
+                                        <tr>
+                                            <td>@cat.CategoryName</td>
+                                            <td>@cat.Products.Count</td>
+
+                                            <td>
+                                                <a asp-area="Admin" asp-controller="Category" asp-action="Update" asp-route-id="@cat.CategoryId" class="text-inverse p-r-10" data-toggle="tooltip" title="" data-original-title="Update"><i class="glyphicon glyphicon-edit"></i></a>
+                                                <a asp-area="Admin" asp-controller="Category" asp-action="Delete" asp-route-id="@cat.CategoryId" class="text-inverse" title="Delete" data-toggle="tooltip" data-original-title="Delete"><i class="glyphicon glyphicon-trash"></i></a>
+
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

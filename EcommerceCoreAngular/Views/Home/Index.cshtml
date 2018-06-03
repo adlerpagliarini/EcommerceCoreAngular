@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Home Page - Adler";
+}
+<style>
+    .main-nav[_ngcontent-c1] {
+        top: unset !important;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row col-md-offset-3">
+        <h1>Home | Index Page</h1>
+        <hr />
+        <h2>Routing For Admin Area</h2>
+        <a asp-area="Admin" asp-controller="Products" asp-action="Index"><b>Admin Products</b> </a>
+        <br />
+        <a asp-area="Admin" asp-controller="Category" asp-action="Index">Admin Category</a>
+
+        <hr />
+        <h2>Routing For Frontend</h2>
+        <a asp-controller="Product" asp-action="Index">Product List Page</a>
+
+        <br />
+        <a asp-controller="Categories" asp-action="Index">Categories List Page</a>
+
+        <br />
+        <a asp-controller="Card" asp-action="Index">Card List Page</a>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
+    </div>
+</div>
+
+<script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section scripts {
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+}

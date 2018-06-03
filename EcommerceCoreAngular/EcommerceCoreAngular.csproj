@@ -1,0 +1,120 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Admin\Views\Category\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Category\Update.cshtml" />
+    <None Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Products\Update.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\Register.cshtml" />
+    <None Include="Views\Shared\AdminPartials\_SideBar.cshtml" />
+    <None Include="Views\Shared\AdminPartials\_TopMenu.cshtml" />
+    <None Include="Views\Shared\AdminPartials\_TopPartialLoginMenu.cshtml" />
+    <None Include="wwwroot\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\css\bootstrap.css.map" />
+    <None Include="wwwroot\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\custom.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\sidebar-nav.min.js" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\dist\js\npm.js" />
+    <None Include="wwwroot\lib-tutorial\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib-tutorial\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib-tutorial\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib-tutorial\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib-tutorial\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib-tutorial\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib-tutorial\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib-tutorial\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib-tutorial\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib-tutorial\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib-tutorial\jquery\dist\jquery.min.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\npm.js" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="ClientApp\dist\" />
+    <Folder Include="wwwroot\dist\" />
+  </ItemGroup>
+
+  <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+
+    <!-- In development, the dist files won't exist on the first run or when cloning to
+         a different machine, so rebuild them if not already present. -->
+    <Message Importance="high" Text="Performing first-run Webpack build..." />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec Command="npm install" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>

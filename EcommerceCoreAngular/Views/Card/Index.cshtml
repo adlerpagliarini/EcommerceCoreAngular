@@ -1,0 +1,89 @@
+﻿@model EcommerceCoreAngular.ViewModels.Card.CardIndexVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_FrontendLayout";
+}
+<div class="container-fluid">
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h4 class="page-title">Product Cart</h4>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-md-9 col-lg-9 col-sm-7">
+            <div class="panel panel-info">
+                <div class="panel-heading"> Your Cart (5 items)</div>
+                <div class="panel-wrapper collapse in" aria-expanded="true">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table product-overview">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Product info</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th style="text-align:center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var product in Model.CardProductVMList)
+                                    {
+                                        <tr>
+                                            <td width="150"><img src="~/images/1_woman.jpg" width="80"></td>
+                                            <td width="550">
+                                                <h5 class="font-500">@product.ProductName</h5>
+                                                <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look</p>
+                                            </td>
+
+                                            <td width="150" align="center" class="font-500">$@product.Price</td>
+
+                                            <td width="70">
+                                                <p>@product.Quantity</p>
+                                            </td>
+                                            <td align="center"><a href="javascript:void(0)" class="text-inverse" title="" data-toggle="tooltip" data-original-title="Delete"><i class="glyphicon glyphicon-remove text-dark"></i></a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <hr>
+                            <button class="btn btn-danger pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
+                            <button class="btn btn-default btn-outline"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-5">
+            <div class="white-box">
+                <h3 class="box-title">Cart Summary</h3>
+                <hr> <small>Total Price</small>
+                <h2>$@Model.CardTotalPrice</h2>
+                <hr>
+                <button class="btn btn-success">Checkout</button>
+                <button class="btn btn-default btn-outline">Continue Shopping</button>
+            </div>
+        </div>
+
+    </div>
+
+    @Html.Partial("PaypalView", Model.PayOrder)
+    @*<div>
+        @using (Html.BeginForm("Pay", "Cart"))
+        {
+
+            <div class="form-group">
+                <label asp-for="Amount" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+
+            <input type='image' name='submit'
+                   src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif' />
+        }
+    </div>*@
+
+</div>

@@ -1,0 +1,42 @@
+﻿@model RegisterVM
+
+<section id="wrapper">
+    <div class="login-box">
+        <div class="white-box">
+            <form asp-controller="Account" asp-action="Register" method="post" class="form-horizontal" id="loginform">
+                <h3 class="box-title">Sign Up</h3>
+                <div class="form-group">
+                </div>
+                <div class="form-group ">
+                    <div class="col-md-12">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" type="text" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-md-12">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" type="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label asp-for="ConfirmPassword"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Confirm Password">
+                    </div>
+                </div>
+                <div class="form-group text-center m-t-20">
+                    <div class="col-md-12">
+                        <button class="btn btn-info btn-lg btn-block text-uppercase" type="submit">Register</button>
+                    </div>
+                </div>
+                <div class="form-group m-b-30">
+                    <div class="col-md-12 text-center">
+                        <p>Already you have an account? <a asp-controller="Account" asp-action="Login" class="text-primary m-l-5"><b>Sign In</b></a></p>
+                    </div>
+                </div>
+            </form>
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+    </div>
+</section>

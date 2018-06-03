@@ -1,0 +1,21 @@
+﻿@model EcommerceCoreAngular.Paypal.PaypalOrder
+@{
+    ViewData["Title"] = "Paypal";
+}
+
+<h1>Paypal Page</h1>
+@using (Html.BeginForm("Pay", "Card"))
+{
+    <div class="form-group">
+        <label asp-for="Amount" class="col-md-2 control-label">
+            <div class="col-md-10">
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+        </label>
+    </div>
+
+    <input type='image' name='submit'
+           src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif' />
+
+}

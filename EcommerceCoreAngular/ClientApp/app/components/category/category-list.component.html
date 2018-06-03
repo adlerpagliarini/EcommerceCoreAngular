@@ -1,0 +1,54 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <h3 class="box-title">Blank Starter page</h3>
+            <!--<a asp-area="Admin" asp-controller="Category" asp-action="Create" class="btn btn-success">
+                <span class="btn btn-label"><i class="fa fa-check"></i></span>Add New Category
+            </a>-->
+        </div>
+    </div>
+</div>
+
+<!-- .row -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="white-box">
+                        <h3 class="box-title">Category Overview Angular4</h3>
+                        <div class="table-responsive">
+                            <table class="table product-overview">
+                                <thead>
+                                    <tr>
+                                        <th>Category Name</th>
+                                        <!--<th>Total Products</th>-->
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- @foreach (var cat in Model)
+                                    {<tr> -->
+                                    <tr *ngFor="let item of items">
+                                        <!--<td>@cat.CategoryName</td>-->
+                                        <!--<td> @cat.Products.Count</td>-->
+
+                                        <td>{{item.categoryName}}</td>
+                                        <!-- <td><a asp-area="Admin" asp-controller="Category" asp-action="Update" asp-route-id="@cat.ID" class="text-inverse p-r-10" data-toggle="tooltip" title="" data-original-title="Update"><i class="glyphicon glyphicon-edit"></i></a>
+                                        <a asp-area="Admin" asp-controller="Category" asp-action="Delete" asp-route-id="@cat.ID" class="text-inverse" title="Delete" data-toggle="tooltip" data-original-title="Delete"><i class="glyphicon glyphicon-trash"></i></a></td>-->
+                                        <td><a class="mdl-navigation__link" [routerLink]="['/category',item.categoryId]">Edit</a></td>
+
+                                    </tr>
+                                    <!-- }-->
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<!-- /#page-wrapper -->

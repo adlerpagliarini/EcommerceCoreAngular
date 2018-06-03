@@ -1,0 +1,41 @@
+﻿@model List<EcommerceCoreAngular.Models.Category>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Categories | Index";
+    Layout = "_FrontendLayout";
+}
+
+<div class="container-fluid">
+    <div class="row bg-title text-center text-uppercase">
+        <div class="col-md-12">
+            <h4 class="page-title">Categories</h4>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        @foreach (var cat in Model)
+        {
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="white-box">
+                    @*<a href="#">*@
+                    <div class="product-img">
+                        <img src="~/images/1_woman.jpg">
+
+                    </div>
+                    <div class="product-text text-center">
+                        <h3 class="box-title m-b-0">@cat.CategoryName</h3>
+                        <small class="text-muted db">@*@cat.Description*@ Category description comes here</small>
+                        <div>
+                            <h5 class="text-muted"> <i class="fa fa-circle" style="color: #00695C;"></i> Products</h5>
+                            <h4 class="m-b-0">45</h4>
+                        </div>
+                    </div>
+                    @*</a>*@
+                </div>
+            </div>
+        }
+
+
+    </div>
+    <!--row -->
+</div>

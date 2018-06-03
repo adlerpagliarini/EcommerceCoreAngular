@@ -1,0 +1,37 @@
+﻿@model EcommerceCoreAngular.Models.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row m-t-30">
+    <div class="col-md-12">
+        <form asp-area="Admin" asp-controller="Category" asp-action="Update" method="post">
+            <div class="panel panel-info">
+                <div class="panel-heading"> Edit Category</div>
+                <div class="panel-wrapper" aria-expanded="true">
+                    <div class="panel-body">
+                        <div class="form-body">
+                            <h3 class="box-title">Edit Category {Name}</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input asp-for="CategoryId" type="hidden" />
+                                        <label class="control-label">Category Name</label>
+                                        <input asp-for="CategoryName" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="form-actions m-t-30">
+                                <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div asp-validation-summary="All"></div>

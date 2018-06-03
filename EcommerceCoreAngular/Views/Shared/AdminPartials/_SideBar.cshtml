@@ -1,0 +1,41 @@
+﻿    <!-- Left navbar-sidebar -->
+<div class="navbar-default sidebar" role="navigation">
+    <div style="position: relative; overflow: hidden; width: auto; height: 100%;">
+        <div class="sidebar-nav navbar-collapse" style="overflow: hidden; width: auto; height: 100%;">
+            <!-- User Profile -->
+            <div class="user-profile">
+                <div class="dropdown user-pro-body">
+                    <div><img src="~/images/profile_pic.jpg" alt="user-img" class="img-rounded"></div>
+                    <a href="javascript:void">John Hansen</a>
+                </div>
+            </div>
+            <!-- Close user profile -->
+
+            <ul class="nav" id="side-menu">
+                <li class="nav-small-cap m-t-10 m-l-30">Menu</li>
+                <li>
+                    <a href="javascript:void(0)"><i class="glyphicon glyphicon-file"></i> <span class="hide-menu">Home</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i class="glyphicon glyphicon-file"></i> <span class="hide-menu">Categories<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a asp-area="Admin" asp-controller="Category" asp-action="Index">List Of Categories</a></li>
+                        <li><a asp-area="Admin" asp-controller="Category" asp-action="Create">Create</a></li>
+                        <!-- Tbm funciona
+                            <li><a href="/Admin/Products/Index" class="active">List Of Products</a></li>
+                        <li><a href="/Admin/Products/Create">Create</a></li>
+                            -->
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i data-icon="" class="glyphicon glyphicon-file"></i> <span class="hide-menu">Products<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">14</span></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a asp-area="Admin" asp-controller="Products" asp-action="Index">List Of Products</a></li>
+                        <li><a asp-area="Admin" asp-controller="Products" asp-action="Create">Create</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Left navbar-header end -->

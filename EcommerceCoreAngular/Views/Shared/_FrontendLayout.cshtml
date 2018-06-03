@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/sidebar-nav.min.css" rel="stylesheet" />
+    <link href="~/css/animate.css" rel="stylesheet" />
+    <link href="~/css/default.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body class="fix-header fix-sidebar content-wrapper" style="background-color:#ECEFF1">
+    @Html.Partial("AdminPartials/_TopMenu")
+    <div>
+        <div class="m-t-40">
+            @RenderBody()
+        </div>
+        <hr />
+        <footer class="footer text-center">© @DateTime.Now.Year | Powered by Love</footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/sidebar-nav.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@model List<EcommerceCoreAngular.Models.Product>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_FrontendLayout";
+}
+
+<div class="container-fluid">
+    <div class="row bg-title text-center text-uppercase">
+        <div class="col-md-12">
+            <h4 class="page-title">Products</h4>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        @foreach (var prod in Model)
+        {
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="white-box">
+                    <div class="product-img">
+                        <img width="150px" src='~/uploads/@prod.ProductImagePath'>
+
+                    </div>
+                    <div class="product-text">
+                        <span class="pro-price bg-inverse">@prod.UnitPrice</span>
+                        <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@prod.ProductId">@prod.ProductName</a>
+                        <small class="text-muted db">@prod.Details</small>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <!--row -->
+</div>

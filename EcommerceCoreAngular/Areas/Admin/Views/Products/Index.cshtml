@@ -1,0 +1,77 @@
+﻿@model IEnumerable<EcommerceCoreAngular.Models.Product>
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Products Index";
+}
+<!-- Page Content -->
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <h3 class="box-title">PRODUCTS</h3>
+            <a asp-area="Admin" asp-controller="Products" asp-action="Create" class="btn btn-success"><span class="btn btn-label"><i class="fa fa-check"></i></span>Add New Product</a>
+        </div>
+    </div>
+</div>
+
+<!-- .row -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="white-box">
+                        <h3 class="box-title">Products List</h3>
+
+                        @if (TempData["result"] != null)
+                        {
+                            <div class="alert @TempData["result"]">
+                                <strong class="text-success">@TempData["result"]</strong>
+                            </div>
+                        }
+                        <div class="table-responsive">
+                            <table class="table product-overview">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Category</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var prod in Model)
+                                    {
+                                        <tr>
+                                            <td>@prod.ProductName</td>
+                                            <td>@prod.Categories.CategoryName</td>
+                                            <td>
+                                                @if (prod.IsActive == true)
+                                                {
+                                                    <span class="label label-success font-weight-100">Active</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="label label-danger font-weight-100">Deactive</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                <a asp-area="Admin" asp-controller="Products" asp-action="Update" asp-route-id="@prod.ProductId" class="text-inverse p-r-10" data-toggle="tooltip" title="" data-original-title="Edit"><i class="glyphicon glyphicon-edit"></i></a>
+                                                <a asp-area="Admin" asp-controller="Products" asp-action="Delete" asp-route-id="@prod.ProductId" class="text-inverse" title="" data-toggle="tooltip" data-original-title="Delete"><i class="glyphicon glyphicon-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<!-- /#page-wrapper -->
